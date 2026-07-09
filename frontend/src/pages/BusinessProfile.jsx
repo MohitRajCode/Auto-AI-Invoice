@@ -6,7 +6,7 @@ import {
   customStyles,
 } from "../assets/dummyStyles";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
 /* ---------- small icon components ---------- */
 const UploadIcon = ({ className = "w-5 h-5" }) => (

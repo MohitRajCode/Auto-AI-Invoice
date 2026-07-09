@@ -4,7 +4,7 @@ import { useAuth } from "@clerk/clerk-react";
 import { invoicePreviewStyles } from "../assets/dummyStyles";
 
 /* ----------------- CONFIG ----------------- */
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 const PROFILE_ENDPOINT = `${API_BASE}/api/businessProfile/me`;
 const INVOICE_ENDPOINT = (id) => `${API_BASE}/api/invoice/${id}`;
 
