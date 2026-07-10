@@ -6,7 +6,9 @@
 "type": "module",  
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "cd ../frontend && npm install && npm run build",
+    "render-build": "npm install && cd ../frontend && npm install && npm run build"
   },
   "engines": {
     "node": ">=18.0.0"
