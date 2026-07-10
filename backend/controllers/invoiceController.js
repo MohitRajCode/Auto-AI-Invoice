@@ -3,7 +3,7 @@ import path from "path";
 import { getAuth } from "@clerk/express";
 import Invoice from "../models/invoiceModel.js";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = process.env.BACKEND_URL || process.env.RENDER_EXTERNAL_URL || "http://localhost:4000";
 
 // Compute subtotal, tax, and total 
 function computeTotals(items = [], taxPercent = 0) {
