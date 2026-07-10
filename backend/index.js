@@ -53,9 +53,10 @@ if (fs.existsSync(frontendDist)) {
     app.use(express.static(frontendDist));
 
     // SPA fallback — send index.html for any non-API route
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(frontendDist, 'index.html'));
-    });
+   app.use((req, res) => {
+    res.sendFile(path.join(frontendDist, "index.html"));
+});
+
     console.log('Serving frontend from:', frontendDist);
 } else {
     // Dev-only health check
