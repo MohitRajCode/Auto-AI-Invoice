@@ -13,7 +13,7 @@ import { clerkMiddleware } from "@clerk/express";
 const invoiceRouter = express.Router();
 
 // 🔐 Clerk automatically injects req.auth.userId
-invoiceRouter.use(clerkMiddleware());
+//invoiceRouter.use(clerkMiddleware());
 
 // All routes protected
 invoiceRouter.get("/", getInvoices);
