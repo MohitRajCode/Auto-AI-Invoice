@@ -17,11 +17,14 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 // Allow both localhost (dev) and Render (prod) origins
+// Allow multiple frontend URLs from Render environment variable
 const allowedOrigins = [
-    process.env.FRONTEND_URL,
-    "http://localhost:5173",
-    "http://localhost:4000",
-].filter(Boolean);
+  ...(process.env.FRONTEND_URL
+    ? process.env.FRONTEND_URL.split(",").map(origin => origin.trim())
+    : []),
+  "https://auto-ai-invoice-1.onrender.com/3",
+  "https://auto-ai-invoice.vercel.app/",
+];
 
 app.use(cors({
     origin: allowedOrigins,
