@@ -22,8 +22,9 @@ const allowedOrigins = [
   ...(process.env.FRONTEND_URL
     ? process.env.FRONTEND_URL.split(",").map(origin => origin.trim())
     : []),
-  "https://auto-ai-invoice-1.onrender.com/3",
-  "https://auto-ai-invoice.vercel.app/",
+  "https://auto-ai-invoice-1.onrender.com",
+  "https://auto-ai-invoice.vercel.app",
+  "http://localhost:5173",
 ];
 
 app.use(cors({
